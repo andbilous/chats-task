@@ -8,7 +8,7 @@ var express = require('express'),
     let userCount =0;
 app.use( express.static(__dirname + '/public'));
 
-server.listen(4003);
+server.listen(4000);
 
 io.sockets.on('connection', function (socket) {
 sockets.push(socket);
