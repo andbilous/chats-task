@@ -5,14 +5,12 @@ var express = require('express'),
     messages = [],
     sockets = [];
     users = [];
-    let userCount =0;
 app.use( express.static(__dirname + '/public'));
 
 server.listen(4000);
 
 io.sockets.on('connection', function (socket) {
 sockets.push(socket);
-console.log(socket.sessionid);
     socket.emit('messages-available', messages);
     socket.emit('users-available', users);
 

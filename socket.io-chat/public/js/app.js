@@ -15,15 +15,7 @@ socket.on('users-available', function (data) {
     for (var i = 0; i < data.length; i++) {
         addUsername(data[i]);
     }
-   console.log(socket.connected); 
 });
-
-socket.on('userCount', function (data) {
-    console.log(data.userCount);
-  });
-  socket.emit('userStatus', {
-    
-  });
 
 socket.on('messages-available', function (data) {
     for (var i = 0; i < data.length; i++) {
@@ -48,10 +40,10 @@ socket.on('message-added',addMessage);
 
 $("#message").keyup(function (e)  {
  if (e.keyCode == 13)  {
-  socket.emit('send', {nickname: $('#nickname').val() , msg: $("#message").val()});
+  socket.emit('send', {nickname: "nick" , msg: $("#message").val()});
       $('#message').val('');  }
  else{
-  socket.emit('is typing',  {nickname: $('#nickname').val()});
+  socket.emit('is typing',  {nickname: "nick"});
      }
 });
 
